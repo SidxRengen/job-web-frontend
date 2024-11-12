@@ -12,7 +12,7 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [Jobs, setJobs] = useState([]);
   const getJobs = async () => {
-    const res = await axios.get("http://localhost:5001/job/jobs/not-applied", {
+    const res = await axios.get("https://job-web-backend-1.onrender.com/job/jobs/not-applied", {
       headers: {
         Authorization: `Bearer ${localStorage?.getItem("token")}`,
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ function Home() {
   const applyJob = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5001/job/apply/${id}`,
+        `https://job-web-backend-1.onrender.com/job/apply/${id}`,
         {},
         {
           headers: {

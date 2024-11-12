@@ -21,7 +21,7 @@ function Login() {
     try {
       if (company) {
         const response = await axios.post(
-          "http://localhost:5001/user/company/login",
+          "https://job-web-backend-1.onrender.com/user/company/login",
           loginCreds
         );
         const token = response.data.token;

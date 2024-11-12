@@ -17,7 +17,7 @@ function CreateJob() {
   };
   const createJob = async () => {
     try {
-      const res = await axios.post("http://localhost:5001/job/jobs", job, {
+      const res = await axios.post("https://job-web-backend-1.onrender.com/job/jobs", job, {
         headers: {
           Authorization: `Bearer ${localStorage?.getItem("token")}`,
           "Content-Type": "application/json",

@@ -12,7 +12,7 @@ function Company() {
   const [searchTerm, setSearchTerm] = useState("");
   const [Jobs, setJobs] = useState([]);
   const getJobs = async () => {
-    const res = await axios.get("http://localhost:5001/job/jobs");
+    const res = await axios.get("https://job-web-backend-1.onrender.com/job/jobs");
     setJobs(res.data);
     console.log(res.data);
     return res;

@@ -9,7 +9,7 @@ function AppliedJobs() {
   const [applications, setApplications] = useState([]);
   const getApplication = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/job/applications", {
+      const res = await axios.get("https://job-web-backend-1.onrender.com/job/applications", {
         headers: {
           Authorization: `Bearer ${localStorage?.getItem("token")}`,
           "Content-Type": "application/json",
