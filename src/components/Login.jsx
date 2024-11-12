@@ -31,7 +31,7 @@ function Login() {
         navigate("/company/home");
       } else {
         const response = await axios.post(
-          "http://localhost:5001/user/login",
+          "https://job-web-backend-1.onrender.com/user/login",
           loginCreds
         );
         const token = response.data.token;
@@ -48,14 +48,14 @@ function Login() {
     try {
       if (company) {
         const response = await axios.post(
-          "http://localhost:5001/user/company/register",
+          "https://job-web-backend-1.onrender.com/user/company/register",
           signUpCreds
         );
         message.success("Comapny Account Created Sucessfully!");
         setLogin(true);
       } else {
         const response = await axios.post(
-          "http://localhost:5001/user/register",
+          "https://job-web-backend-1.onrender.com/user/register",
           signUpCreds
         );
         setLogin(true);

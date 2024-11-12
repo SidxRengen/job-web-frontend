@@ -12,7 +12,9 @@ function Company() {
   const [searchTerm, setSearchTerm] = useState("");
   const [Jobs, setJobs] = useState([]);
   const getJobs = async () => {
-    const res = await axios.get("https://job-web-backend-1.onrender.com/job/jobs");
+    const res = await axios.get(
+      "https://job-web-backend-1.onrender.com/job/jobs"
+    );
     setJobs(res.data);
     console.log(res.data);
     return res;
@@ -38,12 +40,15 @@ function Company() {
   }, []);
   const deleteJob = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/job/jobs/${id}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage?.getItem("token")}`,
-          "Content-Type": "application/json",
-        },
-      });
+      await axios.delete(
+        `https://job-web-backend-1.onrender.com/job/jobs/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage?.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
       message.success("job deleted sucessfully!");
       getJobs();
     } catch (error) {
